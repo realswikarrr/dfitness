@@ -1,7 +1,7 @@
 const Slider = () => {
   return (
     <div>
-      <p>Slider Here</p>
+      <p>Don't Know What I Am Doing</p>
     </div>
   );
 };
