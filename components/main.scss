@@ -9,7 +9,6 @@
   outline: none;
   border: none;
   text-transform: capitalize;
-  transition: all 0.2s linear;
 }
 
 $red: #f00;
@@ -118,7 +117,7 @@ section {
   .navbar a {
     display: inline-block;
     padding: 1.5rem 2rem;
-    font-size: 1.7rem;
+    font-size: 1.4rem;
     color: $white;
 
     &:hover {

@@ -1,4 +1,4 @@
-import Product from "../components/product";
+import Product from "../../components/product";
 import { createClient } from "next-sanity";
 /* eslint-disable @next/next/no-img-element */
 const Products = ({ products }: any) => {
