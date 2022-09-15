@@ -3,9 +3,9 @@ import { createClient } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
 import { PortableText } from "@portabletext/react";
 import { useEffect, useState } from "react";
+import Moment from "moment";
 
-const Post = ({ title, body, image }) => {
-  console.log(body);
+const Post = ({ title, body, image, author, date }) => {
   const [imageUrl, setImageUrl] = useState("");
 
   useEffect(() => {
@@ -18,10 +18,17 @@ const Post = ({ title, body, image }) => {
   }, [image]);
 
   return (
-    <div className="mt-24 flex justify-center flex-col max-w-7xl mx-auto items-center">
-      <h1 className="text-white text-4xl">{title}</h1>
-      {imageUrl && <img src={imageUrl} alt="" />}
-      <div className="text-white text-2xl mt-4">
+    <div className="mt-36 flex justify-center flex-col max-w-3xl md:max-w-6xl lg:max-w-screen-lg mx-auto items-center ">
+      {imageUrl && (
+        <img className="h-[300px] mt-2 rounded-md" src={imageUrl} alt="" />
+      )}
+      <h1 className="text-white text-4xl mt-5">{title}</h1>
+
+      <h1 className="text-white mt-4 text-xl space-x-2">
+        By:<span className="text-red-500"> {author}</span>{" "}
+        <span>on: {Moment(date).format("DD/MM/YYYY HH:mm")}</span>
+      </h1>
+      <div className="text-white text-2xl mt-4 text-justify">
         <PortableText value={body} />
       </div>
     </div>
@@ -60,6 +67,8 @@ export const getServerSideProps = async (context) => {
         title: post.title,
         body: post.body,
         image: post.image,
+        author: post.author,
+        date: post.publishedAt,
       },
     };
   }

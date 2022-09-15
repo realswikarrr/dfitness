@@ -5,11 +5,8 @@ const NavBar = () => {
   return (
     <header className="header">
       <a href="#" className="logo">
-        {" "}
-        <span>DIAMOND</span>FITNESS{" "}
+        <span>DIAMOND</span>FITNESS
       </a>
-
-      <div id="menu-btn" className="fas fa-bars"></div>
 
       <nav className="navbar">
         <Link href="#home">home</Link>
