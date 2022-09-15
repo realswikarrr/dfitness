@@ -2,8 +2,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import { Autoplay, Pagination } from "swiper";
 import "swiper/css/pagination";
-
 import "swiper/css";
+
+import Link from "next/link";
 
 const Slider = () => {
   return (
@@ -33,9 +34,9 @@ const Slider = () => {
                 <div className="content">
                   <span>be strong, be fit</span>
                   <h3>Make yourself stronger than your excuses.</h3>
-                  <a href="#" className="btn">
-                    get started
-                  </a>
+                  <Link href="#">
+                    <a className="btn">get started</a>
+                  </Link>
                 </div>
               </div>
             </SwiperSlide>
@@ -51,9 +52,9 @@ const Slider = () => {
                 <div className="content">
                   <span>be strong, be fit</span>
                   <h3>Make yourself stronger than your excuses.</h3>
-                  <a href="#" className="btn">
-                    get started
-                  </a>
+                  <Link href="#">
+                    <a className="btn">get started</a>
+                  </Link>
                 </div>
               </div>
             </SwiperSlide>
@@ -69,9 +70,9 @@ const Slider = () => {
                 <div className="content">
                   <span>be strong, be fit</span>
                   <h3>Make yourself stronger than your excuses.</h3>
-                  <a href="#" className="btn">
-                    get started
-                  </a>
+                  <Link href="#">
+                    <a className="btn">get started</a>
+                  </Link>
                 </div>
               </div>
             </SwiperSlide>

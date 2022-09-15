@@ -21,10 +21,6 @@ const Blog = () => {
             spaceBetween={50}
             slidesPerView={3}
             loop={true}
-            // autoplay={{
-            //   delay: 200,
-            //   disableOnInteraction: false,
-            // }}
             pagination={{
               clickable: true,
             }}
