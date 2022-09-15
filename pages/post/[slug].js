@@ -54,7 +54,7 @@ export const getServerSideProps = async (context) => {
   const result = await client.fetch(
     `*[_type == "blogs" && slug.current == "${pageSlug}"]`
   );
-  console.log(result);
+
   const post = result[0];
 
   if (!post) {

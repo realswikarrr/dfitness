@@ -20,7 +20,8 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/post/[slug].js",
-    "pages/post/[slug].js"
+    "pages/post/[slug].js",
+    "components/blog.tsx"
   ],
 
   "exclude": ["node_modules"]

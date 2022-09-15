@@ -6,8 +6,9 @@ import Feature from "../components/feature";
 import Pricing from "../components/pricing";
 import Slider from "../components/slider";
 import Trainers from "../components/trainers";
+import { createClient } from "next-sanity";
 
-const Home: NextPage = () => {
+const Home: NextPage = ({ blogs }: any) => {
   return (
     <>
       <Slider />
@@ -16,9 +17,34 @@ const Home: NextPage = () => {
       <Pricing />
       <Trainers />
       <Discount />
-      <Blog />
+      <Blog blogs={blogs} />
     </>
   );
+};
+
+const client = createClient({
+  projectId: "rd8ppmd7",
+  dataset: "production",
+  apiVersion: "2021-08-31",
+  useCdn: false,
+});
+
+export const getServerSideProps = async (context: any) => {
+  const result = await client.fetch(`*[_type == "blogs"]`);
+
+  if (!result || result.length === 0) {
+    return {
+      props: {
+        blogs: [],
+      },
+    };
+  } else {
+    return {
+      props: {
+        blogs: result,
+      },
+    };
+  }
 };
 
 export default Home;
