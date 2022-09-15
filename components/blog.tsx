@@ -2,16 +2,17 @@
 import Moment from "moment";
 import imageUrlBuilder from "@sanity/image-url";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import { Autoplay, Pagination } from "swiper";
 import "swiper/css/pagination";
-
 import "swiper/css";
 import { useEffect, useState } from "react";
-import Link from "next/link";
+import { useRouter } from "next/router";
+import Loader from "./loader";
 
 const Blog = ({ blogs }: any) => {
+  const router = useRouter();
   const [mappedPosts, setMappedPosts] = useState<any>([]);
+  const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
     if (blogs.length) {
@@ -38,7 +39,7 @@ const Blog = ({ blogs }: any) => {
       <h1 className="heading">
         <span>daily posts</span>
       </h1>
-
+      {loading ? <Loader /> : <></>}
       <div className="swiper blogs-slider">
         <Swiper
           spaceBetween={50}
@@ -66,9 +67,14 @@ const Blog = ({ blogs }: any) => {
                       </div>
                       <h3>{p.title}</h3>
                       <p>{p.shortDescription}</p>
-                      <Link href={`/post/${p.slug.current}`}>
-                        <span className="btn">read more</span>
-                      </Link>
+                      <div
+                        onClick={() => {
+                          setLoading(true),
+                            router.push(`/post/${p.slug.current}`);
+                        }}
+                      >
+                        <span className="btn">read more </span>
+                      </div>
                     </div>
                   </div>
                 </SwiperSlide>
