@@ -15,13 +15,15 @@
     "jsx": "preserve",
     "incremental": true
   },
+
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "pages/post/[slug].js",
     "pages/post/[slug].js",
-    "components/blog.tsx"
+    "components/blog.tsx",
+    "pages/_app.tsx"
   ],
 
   "exclude": ["node_modules"]
