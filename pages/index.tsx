@@ -1,10 +1,11 @@
 import type { NextPage } from "next";
+import About from "../components/about";
 
 const Home: NextPage = () => {
   return (
-    <div>
-      <h1 className="">Hello D Fitness</h1>
-    </div>
+    <>
+      <About />
+    </>
   );
 };
 
