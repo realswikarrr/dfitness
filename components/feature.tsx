@@ -15,9 +15,6 @@ const Feature = () => {
 
       <div className="box-container">
         <div className="box">
-          <div className="image">
-            <Image placeholder="blur" src={FeatureImage1} alt="" />
-          </div>
           <div className="content">
             <Image placeholder="blur" src={FetureImage1Icon} alt="" />
             <h3>body building</h3>
@@ -32,9 +29,6 @@ const Feature = () => {
         </div>
 
         <div className="box second">
-          <div className="image">
-            <Image placeholder="blur" src={FeatureImage2} alt="" />
-          </div>
           <div className="content">
             <Image placeholder="blur" src={FetureImage2Icon} alt="" />
             <h3>gym for men</h3>
@@ -49,9 +43,6 @@ const Feature = () => {
         </div>
 
         <div className="box">
-          <div className="image">
-            <Image placeholder="blur" src={FeatureImage3} alt="" />
-          </div>
           <div className="content">
             <Image placeholder="blur" src={FeatureImage3Icon} alt="" />
             <h3>gym for women</h3>
