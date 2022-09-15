@@ -11,7 +11,10 @@ const NavBar = () => {
       </Link>
 
       <nav className="navbar">
-        <Link href="/">home</Link>
+        <Link href="/" scroll={true}>
+          home
+        </Link>
+        <Link href="/products">products</Link>
         <Link href="/#about">about</Link>
         <Link href="/#features">features</Link>
         <Link href="/#pricing">pricing</Link>
