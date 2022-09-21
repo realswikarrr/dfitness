@@ -1,7 +1,10 @@
 import Link from "next/link";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 /* eslint-disable @next/next/no-img-element */
 const NavBar = () => {
+  const { data: session } = useSession();
+
   return (
     <div className="header">
       <Link href="/">
@@ -16,21 +19,25 @@ const NavBar = () => {
           <a> Home</a>
         </Link>
         <Link href="/products">
-          <a> Products</a>
+          <a> Shop</a>
         </Link>
         <Link href="/#about">
           <a> About</a>
-        </Link>
-        <Link href="/#features">
-          <a> Features</a>
-        </Link>
-        <Link href="/#pricing">
-          <a> Pricing</a>
         </Link>
 
         <Link href="/#blogs">
           <a> Blogs</a>
         </Link>
+        {session ? (
+          <Link href="/useraccount">
+            <a>My Account</a>
+          </Link>
+        ) : (
+          <a className=" cursor-pointer" onClick={() => signIn("google")}>
+            {" "}
+            Login
+          </a>
+        )}
       </nav>
     </div>
   );

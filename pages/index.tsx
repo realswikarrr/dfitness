@@ -2,8 +2,7 @@ import type { NextPage } from "next";
 import About from "../components/about";
 import Blog from "../components/blog";
 import Discount from "../components/discount";
-import Feature from "../components/feature";
-import Pricing from "../components/pricing";
+
 import Slider from "../components/slider";
 import { createClient } from "next-sanity";
 
@@ -12,8 +11,7 @@ const Home: NextPage = ({ blogs }: any) => {
     <>
       <Slider />
       <About />
-      <Feature />
-      <Pricing />
+
       <Discount />
       <Blog blogs={blogs} />
     </>
