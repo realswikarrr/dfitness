@@ -5,7 +5,6 @@ import Discount from "../components/discount";
 import Feature from "../components/feature";
 import Pricing from "../components/pricing";
 import Slider from "../components/slider";
-import Trainers from "../components/trainers";
 import { createClient } from "next-sanity";
 
 const Home: NextPage = ({ blogs }: any) => {
@@ -15,7 +14,6 @@ const Home: NextPage = ({ blogs }: any) => {
       <About />
       <Feature />
       <Pricing />
-      <Trainers />
       <Discount />
       <Blog blogs={blogs} />
     </>

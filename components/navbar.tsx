@@ -3,23 +3,36 @@ import Link from "next/link";
 /* eslint-disable @next/next/no-img-element */
 const NavBar = () => {
   return (
-    <span className="header">
+    <div className="header">
       <Link href="/">
         <span className="logo cursor-pointer">
-          <span>DIAMOND</span>FITNESS
+          <span className="text-red-600">DIAMOND</span>
+          <span className="text-white ">FITNESS</span>
         </span>
       </Link>
 
       <nav className="navbar">
-        <Link href="/">home</Link>
-        <Link href="/products">products</Link>
-        <Link href="/#about">about</Link>
-        <Link href="/#features">features</Link>
-        <Link href="/#pricing">pricing</Link>
-        <Link href="/#trainers">trainers</Link>
-        <Link href="/#blogs">blogs</Link>
+        <Link href="/">
+          <a> Home</a>
+        </Link>
+        <Link href="/products">
+          <a> Products</a>
+        </Link>
+        <Link href="/#about">
+          <a> About</a>
+        </Link>
+        <Link href="/#features">
+          <a> Features</a>
+        </Link>
+        <Link href="/#pricing">
+          <a> Pricing</a>
+        </Link>
+
+        <Link href="/#blogs">
+          <a> Blogs</a>
+        </Link>
       </nav>
-    </span>
+    </div>
   );
 };
 

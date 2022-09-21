@@ -27,13 +27,13 @@ const Product = ({ products }: any) => {
   }, [products]);
 
   return (
-    <div className="justify-center grid grid-cols-4 place-items-start">
+    <div className="justify-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 place-items-start">
       {mappedProducts.length ? (
         mappedProducts.map((p: any, index: any) => (
           <div key={p._id}>
             <a href="#">
               <img
-                className="p-8 rounded-t-lg w-[500px] h-[400px] object-cover"
+                className="p-8 rounded-t-lg w-[400px] h-[400px] object-cover"
                 src={p.image}
                 alt="product image"
               />

@@ -1,16 +1,14 @@
 import Product from "../../components/product";
 import { createClient } from "next-sanity";
-/* eslint-disable @next/next/no-img-element */
+
 const Products = ({ products }: any) => {
   return (
-    <section className="mt-28 md:mt-10">
-      <h1 className="heading">
+    <section>
+      <h1 className="heading mt-28 md:mt-10">
         <span>Our Products</span>
       </h1>
 
-      <div className="w-full mx-auto rounded-lg shadow-md ">
-        <Product products={products} />
-      </div>
+      <Product products={products} />
     </section>
   );
 };
